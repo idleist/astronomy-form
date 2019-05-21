@@ -1,0 +1,170 @@
+/*** CSS RESET ***/
+html, body, div,
+h1, h2, h3, h4, h5, h6, p, a, form, label{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box;
+    
+}
+
+/** General html and body CSS - sets font and full screen **/
+html {
+    height: 100%;
+    width: 100%;
+    
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    font-family: 'Space Mono', monospace;
+    color: white;
+    background-image: url(https://images.pexels.com/photos/957040/night-photograph-starry-sky-night-sky-star-957040.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940); 
+    background-color: #444;
+    background-size: 100% 100%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/** INDEX.HTML CSS **/
+
+h1{
+    font-size: 2em;
+}
+
+/* Form CSS */
+#contact{
+    position: relative;
+    font-size: 0.7em;
+    background-color: rgba(0, 0, 0, 0.7);
+    margin-top: 10px;
+    padding: 30px;
+    border-radius: 10px;
+    display: none;
+    
+}
+
+/* Grid CSS - changes form layout when more information is shown */
+.contact--display{
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: 'contact moreInfo';
+}
+
+/* Close button for form */
+#close{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: red;
+    cursor: pointer;
+}
+
+#contact--form{
+    grid-area: 'contact';
+    display: flex;
+    flex-direction: column;
+}
+
+#moreButton{
+    margin-top: 10px;
+}
+
+/* Changes default input boxes */
+textarea, input, select{
+    font-family: 'Space Mono', monospace;
+    color: white;
+    background: none;
+    border: none;
+    border-bottom: 2px solid rgba(49, 94, 255, 0.4);
+}
+
+option{
+    color: black;
+}
+
+textarea:focus, input:focus, select:focus{
+    outline: 0;
+}
+
+/* Sets the layout of more information section of the form */
+#moreInfo{
+    display: none;
+}
+
+.moreInfoDisplay{
+    grid-area: 'moreInfo';
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'planets ageCountry'
+}
+
+#planets{
+    grid-area: 'planets';
+    margin-left: 10px;
+}
+
+#agesCountry{
+    grid-area: 'ageCountry';
+    margin-left: 10px;
+}
+
+/* button styling */
+button, input[type='submit']{
+    font-family: 'Space Mono', monospace;
+    background: none;
+    border: 2px solid white;
+    padding: 10px;
+    color: white;
+    cursor: crosshair;
+}
+
+#country{
+    margin-top: 10px;
+}
+input[type='submit']{
+    margin: 10px 0 0 10px;
+}
+
+/* Validation messages - error and success message divs */
+#errors{
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: rgb(143, 11, 11, 0.8);
+    display: none;
+}
+
+.errorText{
+    margin-left: 10px;
+}
+
+#success{
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: rgba(11, 143, 18, 0.8);
+    display: none;
+}
+
+/** FORM.PHP CSS **/
+
+#formResults, #userResults{
+    width: 80%;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.7); 
+}
+.userHeader{
+    font-size: 1.2em;
+}
+
+.userText{
+    text-align: center;
+}
